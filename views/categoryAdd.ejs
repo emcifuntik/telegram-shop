@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Telegram-Shop Control Panel</title>
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+  <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+  <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+  <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/js/nicEdit.js"></script>
+  <script type="text/javascript">
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <%- include('parts/nav') %>
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header">Добавление новой категории</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Данные о категории
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <form role="form" method="POST" action="" enctype="multipart/form-data">
+                      <p class="text-danger"><%= error %></p>
+                      <div class="form-group">
+                        <label>Название</label>
+                        <input class="form-control" name="title" placeholder="">
+                      </div>
+                      <button type="submit" class="btn btn-success">Добавить</button>
+                      <button type="reset" class="btn btn-warning">Сбросить</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="../vendor/jquery/jquery.min.js"></script>
+      <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+      <script src="../vendor/raphael/raphael.min.js"></script>
+      <script src="../vendor/morrisjs/morris.min.js"></script>
+      <script src="../data/morris-data.js"></script>
+      <script src="../dist/js/sb-admin-2.js"></script>
+</body>
+
+</html>

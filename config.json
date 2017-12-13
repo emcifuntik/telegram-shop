@@ -1,0 +1,26 @@
+{
+    "telegram": {
+        "token": "412428691:AAFQE9wDZz9WOsAkswUklovrZryWWoCrzuU",
+        "paymentToken": ""
+    },
+    "authData": {
+        "login": "admin",
+        "password": "1232356"
+    },
+    "telegraph": {
+        "shortName": "sweet-shop",
+        "token": "b9f0209f859ce95cdfb6d537a14c87567fdf98e083ec4ab72d683d23c20f"
+    },
+    "mongodb": {
+        "user": "",
+        "host": "localhost",
+        "pass": "",
+        "port": 27017,
+        "collection": "tshop"
+    },
+    "express": {
+        "port": 3000,
+        "secret": "9824g92k4p9cjykv9p43p5v5;0etv4mu8v",
+        "host": "http://localhost:3000/"
+    }
+}

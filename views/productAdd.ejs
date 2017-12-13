@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Telegram-Shop Control Panel</title>
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+  <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+  <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+  <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="/js/nicEdit.js"></script>
+  <script type="text/javascript">
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <%- include('parts/nav') %>
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header">Добавление нового товара</h1>
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Данные о товаре
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <form role="form" method="POST" action="" enctype="multipart/form-data">
+                      <p class="text-danger"><%= error %></p>
+                      <div class="form-group">
+                        <label>Название</label>
+                        <input class="form-control" name="title" placeholder="Конфеты &quot;Сорванец&quot;">
+                      </div>
+                      <div class="form-group">
+                        <label>Изображение</label>
+                        <input type="file" multiple="true" name="image">
+                      </div>
+                      <div class="form-group">
+                        <label>Описание</label>
+                        <textarea class="form-control" name="description" rows="3"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>Единица измерения</label>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="unit" id="unit1" value="piece" checked>Штука
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="unit" id="unit2" value="kilogram">Килограмм
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="unit" id="unit3" value="gram">Грамм
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="unit" id="unit4" value="ton">Тонна
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Наличие</label>
+                        <input class="form-control" name="available" type="number" placeholder="1">
+                      </div>
+                      <div class="form-group">
+                        <label>Цена</label>
+                        <div class="input-group">
+                          <input class="form-control" name="cost" type="number" placeholder="70">
+                          <span class="input-group-addon">₽</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Скидка</label>
+                        <div class="input-group">
+                          <input class="form-control" name="discount" min="0" max="99" type="number" placeholder="20">
+                          <span class="input-group-addon">%</span>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label>Минимальный заказ</label>
+                            <input class="form-control" name="minOrder" type="number" value="-1">
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label>Максимальный заказ</label>
+                            <input class="form-control" name="maxOrder" type="number" value="-1">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Категории</label>
+                        <select name="categories" multiple class="form-control">
+                          <option disabled selected>Вы можете выбрать несколько категорий</option>
+                          <% for(let c of categories) { %>
+                            <option value="<%= c._id.toString() %>"><%= c.title %></option>
+                          <% } %>
+                        </select>
+                      </div>
+                      <button type="submit" class="btn btn-success">Добавить</button>
+                      <button type="reset" class="btn btn-warning">Сбросить</button>
+                    </form>
+                  </div>
+                </div>
+                <!-- /.row (nested) -->
+              </div>
+              <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <script src="../vendor/jquery/jquery.min.js"></script>
+      <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+      <script src="../vendor/raphael/raphael.min.js"></script>
+      <script src="../vendor/morrisjs/morris.min.js"></script>
+      <script src="../data/morris-data.js"></script>
+      <script src="../dist/js/sb-admin-2.js"></script>
+</body>
+
+</html>
